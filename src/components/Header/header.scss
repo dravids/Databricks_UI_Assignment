@@ -1,0 +1,16 @@
+header{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    padding: 0 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0 4px 10px ;
+    .header-title{
+        display:flex;
+        padding-left:170px;
+    }
+}

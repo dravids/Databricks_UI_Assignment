@@ -1,0 +1,16 @@
+[
+    {
+        "page":"releases",
+        "title":"Releases",
+        "path":"/releases",
+        "special_styling":false,
+        "icon":"BiHome"
+    },
+    {
+        "page":"feedback",
+        "title":"Feedback",
+        "path":"/feedback",
+        "special_styling":false,
+        "icon":"BiHome"
+    }
+]

@@ -1,0 +1,12 @@
+.layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh; /* Use min-height instead of height */
+  .content {
+    flex: 1; /* Add top padding for header */
+    @media (max-width: 1024px) {
+      padding-top: 0; /* Remove top padding on smaller screens */
+    }
+  }
+}
+

@@ -1,16 +1,19 @@
-import React from 'react'
+//Library and Component Imports
+import React from 'react';
 import Sidenav from '../../components/Sidenav/Sidenav';
 import Header from '../../components/Header/Header';
-import './layoutsidetopbottom.scss'
-function LayoutSideTopBottom() {
+
+//Import Styling
+import './layoutsidetopbottom.scss';
+
+function LayoutSideTopBottom(props) {
+    const { children } = props;
     return (
-        <div className='layout-container'>
+        <div className='layout'>
             <Sidenav></Sidenav>
-            <section className='main-container'>
-                    <Header></Header>
-                    <main className='main-content'>
-                        Main Content
-                    </main>
+            <section className='content'>
+                <Header></Header>
+                {children}
             </section>
         </div>
     )

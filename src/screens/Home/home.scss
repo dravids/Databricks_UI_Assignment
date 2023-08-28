@@ -1,0 +1,241 @@
+@import "../../styles/VariableTheme.scss";
+
+
+/* Styles for the main content area */
+.main {
+    flex: 2;
+    background-color: $background-color_1;
+    padding: 16px;
+    padding-left: 250px;
+    height: calc(100vh - 65px);
+
+    .main-title {
+        width: 50%;
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+    }
+
+    .product-selection {
+        .dropdowns {
+            display: flex;
+            gap: 1.5rem;
+            padding: 4px 0px;
+            width: 50%;
+        }
+    }
+
+    .search-bar {
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 10px 0px;
+        height: 35px;
+
+        .input-container {
+            width: 90%;
+            border-radius: 4px;
+            background-color: $search_background-color_1;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            font-size: 16px;
+            padding: 5px 10px;
+
+            .search-icon {
+                background-color: $search_background-color_2;
+                margin-right: 10px;
+                font-size: 12px;
+                width: 5%;
+            }
+
+            input[type=text] {
+                padding: 10px;
+                font-size: 12px;
+                float: left;
+                width: 95%;
+                background-color: $search_background-color_2;
+                border: none;
+                outline: none;
+                height: 100%;
+                padding-left: 25px;
+            }
+        }
+
+        button {
+            width: 10%;
+            float: left;
+            padding: 5px;
+            background: #2196F3;
+            color: $search_color;
+            font-size: 12px;
+            border: 1px solid grey;
+            border-left: none;
+            cursor: pointer;
+            height: 100%;
+            border-radius: 0px 5px 5px 0px;
+            background-color: $search_background-color_3;
+        }
+    }
+
+    .main-results-container {
+        height: 80%;
+        width: 90%;
+        overflow: auto;
+
+        .main-results {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            background-color: $background-color_2;
+            border-radius: 10px;
+            margin-top: 15px;
+
+            .monthly-results {
+                width: 100%;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                padding: 15px 5px;
+
+                .title {
+                    padding: 20px 10px;
+                }
+
+                .display-results {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    padding: 8px 15px 8px 30px;
+
+                    .new-icon {
+                        display: inline-flex;
+                        align-items: center;
+                        background-color: $background-color_4;
+                        color: $color;
+                        font-weight: bold;
+                        padding: 5px;
+                        border-radius: 4px;
+                        font-size: 6px;
+                        margin-left: 15px;
+                    }
+
+                    .result-text {
+                        display: flex;
+                        justify-content: left;
+                        align-items: center;
+                        padding-left: 20px;
+                        font-size: 13px;
+                        width: 70%;
+                    }
+                }
+
+                .hr-container {
+                    width: 90%;
+                    margin: 0;
+                    border-width: 1px;
+                    opacity: 0.2;
+
+                    hr {
+                        background-color: $background-color_3;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .not-found-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        background-color: #fff;
+        border-radius: 10px;
+        padding-bottom: 15px;
+        margin-top: 15px;
+    }
+
+    @media (max-width: 1024px) {
+        padding-left: 185px;
+
+        .main-title {
+            width: 70%;
+            font-size: 1.2rem;
+        }
+
+        .search-bar {
+            width: 90%;
+        }
+
+        .main-results-container {
+            width: 90%;
+            height: 75%;
+
+            .main-results {
+                .monthly-results {
+                    .title {
+                        padding: 20px 10px;
+                        font-size: 1.3rem;
+                    }
+
+                    .display-results {
+                        padding: 8px 15px 8px 20px;
+
+                        .result-text {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding-left: 100px;
+
+        .main-title {
+            width: 70%;
+            h2{
+            font-size: 1.1rem;
+            }
+        }
+
+        .search-bar {
+            width: 90%;
+        }
+
+        .main-results-container {
+            width: 90%;
+            height: 75%;
+
+            .main-results {
+                .monthly-results {
+                    .title {
+                        padding: 20px 10px;
+                        font-size: 1rem;
+                    }
+
+                    .display-results {
+                        padding: 8px 15px 8px 20px;
+                        font-size: 10px;
+
+                        .new-icon {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .not-found-container {
+            width: 90%;
+        }
+    }
+
+
+}

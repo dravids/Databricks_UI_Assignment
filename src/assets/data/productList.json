@@ -1,0 +1,8 @@
+{
+    "products": [
+      { "label": "Product A", "value": "A" },
+      { "label": "Product B", "value": "B" },
+      { "label": "Product C", "value": "C" },
+      { "label": "Product D", "value": "D" }
+    ]
+  }

@@ -171,68 +171,77 @@ function Home() {
             Search
           </button>
         </div>
-        {(filteredData.current_month_comparison.length > 0 && filteredData.overall_comparison.length > 0) ? (
+        {(filteredData.current_month_comparison.length > 0 || filteredData.overall_comparison.length > 0) ? (
           <div className='main-results-container'>
 
             <div className='main-results'>
-              {filteredData.current_month_comparison.length > 0 ? (
-                <div className='monthly-results'>
-                  <h2 className='title'>{current_month} comparison</h2>
-                  {filteredData.current_month_comparison.map((data, index) => (
-                    <>
+              <div className='monthly-results'>
+                <h2 className='title'>{current_month} comparison</h2>
+                {filteredData.current_month_comparison.length > 0 ? (
+                  filteredData.current_month_comparison.map((data, index) => (
+                    <div key={index}>
                       <div className='display-results' style={{
                         transition: data ? "top 3s ease" : "none",
                         position: "relative",
                         top: data
-                      }} key={index}>
+                      }}>
                         <span className='new-icon'>
                           <span className='new-text'>NEW</span>
                         </span>
                         <p className='result-text'>{data}</p>
-
                       </div>
-                      {index !== filteredData.current_month_comparison.length - 1 && <div className='hr-container'>
-                        <hr />
-                      </div>}
-                    </>
-                  ))}
-                </div>
-              ) : (
-                <div><img src={no_data_found} style={{ width: '30%' }} alt='not-found' /></div>
-              )
-              }
-
+                      {index !== filteredData.current_month_comparison.length - 1 && (
+                        <div className='hr-container'>
+                          <hr />
+                        </div>
+                      )}
+                    </div>
+                  ))
+                ) : (
+                  <div className='not-found-container'>
+                    <img src={no_data_found} style={{ width: '30%' }} alt='not-found' />
+                    No Data found for the {searchText !== '' ? 'keyword' : 'product selection'} for the current month
+                  </div>
+                )}
+              </div>
             </div>
 
             <div className='main-results'>
-              {filteredData.overall_comparison.length > 0 ? (
-                <div className='monthly-results'>
-                  <h2 className='title'>Overall Comparison</h2>
-                  {filteredData.overall_comparison.map((data, index) => (
-                    <>
-                      <div className='display-results' key={index}>
-                        <span className='new-icon'>NEW
+              <div className='monthly-results'>
+                <h2 className='title'>Overall comparison</h2>
+                {filteredData.overall_comparison.length > 0 ? (
+                  filteredData.overall_comparison.map((data, index) => (
+                    <div key={index}>
+                      <div className='display-results' style={{
+                        transition: data ? "top 3s ease" : "none",
+                        position: "relative",
+                        top: data
+                      }}>
+                        <span className='new-icon'>
+                          <span className='new-text'>NEW</span>
                         </span>
                         <p className='result-text'>{data}</p>
-
                       </div>
-                      {index !== filteredData.overall_comparison.length - 1 && <div className='hr-container'>
-                        <hr />
-                      </div>}
-                    </>
-                  ))}
-                </div>
-              ) : (
-                <div><img src={no_data_found} style={{ width: '30%' }} alt='not-found'></img></div>
-              )
-              }
-
+                      {index !== filteredData.overall_comparison.length - 1 && (
+                        <div className='hr-container'>
+                          <hr />
+                        </div>
+                      )}
+                    </div>
+                  ))
+                ) : (
+                  <div className='not-found-container'>
+                    <img src={no_data_found} style={{ width: '30%' }} alt='not-found' />
+                    No Data found for the {searchText !== '' ? 'keyword' : 'product selection'} for all the months
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         ) : (
           <div className='not-found-container'>
-            <img src={no_data_found} style={{ width: '30%' }} alt='not-found'></img>
-            <p>No Data found - Please make a selection to proceed</p>
+            <img src={no_data_found} style={{ width: '30%', marginTop: '15px' }} alt='not-found'></img>
+            <p>No Data found - Please make a {searchText !== '' ? 'change in keyword' : 'product selection'}  to proceed</p>
           </div>
         )
         }

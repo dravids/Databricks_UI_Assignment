@@ -131,7 +131,7 @@
                 }
 
                 .hr-container {
-                    width: 90%;
+                    width: 85%;
                     margin: 0;
                     border-width: 1px;
                     opacity: 0.2;
@@ -154,7 +154,9 @@
         background-color: #fff;
         border-radius: 10px;
         padding-bottom: 15px;
-        margin-top: 15px;
+        .title {
+            padding: 20px 10px;
+        }
     }
 
     @media (max-width: 1024px) {
@@ -233,6 +235,4 @@
             width: 90%;
         }
     }
-
-
 }

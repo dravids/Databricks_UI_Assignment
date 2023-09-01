@@ -16,7 +16,7 @@ import './home.scss';
 const customStyles = {
   option: (provided, state) => ({
     ...provided,
-    fontSize: '14px',
+    fontSize: '12px',
     fontFamily: 'Poppins, sans-serif',
     fontWeight: state.isSelected ? 'bold' : 'normal',
 
@@ -27,44 +27,47 @@ const customStyles = {
       padding: '8px',
     },
     '@media (max-width: 768px)': {
-      fontSize: '10px',
+      fontSize: '9px',
       padding: '8px',
     },
   }),
   singleValue: (provided, state) => ({
     ...provided,
-    fontSize: '14px',
+    fontSize: '12px',
     fontFamily: 'Poppins, sans-serif',
     fontWeight: 'bold',
     padding: '2px 15px',
     '@media (max-width: 1024px)': {
-      fontSize: '12px',
-      padding: '2px 12px'
+      fontSize: '10px',
+      padding: '2px 10px'
     },
     '@media (max-width: 768px)': {
-      fontSize: '10px',
+      fontSize: '9px',
       padding: '2px 0px'
     },
   }),
   control: (provided) => ({
     ...provided,
     textAlign: 'center',
-    fontSize: '14px',
-    borderRadius: '14px',
+    fontSize: '12px',
+    borderRadius: '12px',
     borderColor: '#ccc',
     boxShadow: 'none',
     width: '100%',
-    padding: '2px 15px',
+    padding: '0px 5px',    
+    // height:'15px',
+    maxHeight:'24px',
     '&:hover': {
       borderColor: '#ccc',
     },
 
     '@media (max-width: 1024px)': {
-      fontSize: '12px',
+      fontSize: '10px',      
+      padding: '0px 14px'
     },
     '@media (max-width: 768px)': {
       fontSize: '10px',
-      padding: '2px 9px'
+      padding: '0px 14px'
     },
   }),
 };
@@ -79,6 +82,7 @@ function Home() {
   const [productList, setProductList] = useState([])
   const [searchText, setSearchText] = useState('')
   const [current_month, setCurrentmonth] = useState('')
+  
 
 
   // Function to fetch comparison results and update comparison_data state
@@ -181,14 +185,14 @@ function Home() {
                   filteredData.current_month_comparison.map((data, index) => (
                     <div key={index}>
                       <div className='display-results' style={{
-                        transition: data ? "top 3s ease" : "none",
                         position: "relative",
                         top: data
                       }}>
                         <span className='new-icon'>
                           <span className='new-text'>NEW</span>
                         </span>
-                        <p className='result-text'>{data}</p>
+                        <p className='result-text'>
+                          <span className='animation-text'>{data}</span></p>
                       </div>
                       {index !== filteredData.current_month_comparison.length - 1 && (
                         <div className='hr-container'>
